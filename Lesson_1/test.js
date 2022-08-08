@@ -1,24 +1,7 @@
-function createBook(title, author, read = false) {
-  return {
-    title,
-    author,
-    read,
-    readBook () {
-      this.read = true;
-    },
-    getDescription() {
-      return `${this.title} was written by ${this.author}. I ${this.read ? 'have' : "haven't"} read it.`;
-    },
-  };
+class Square {
 }
 
+let obj2 = {1: new Square(), 2: {}};
 
 
-let book1 = createBook('Mythos', 'Stephen Fry');
-book1.readBook();
-let book2 = createBook('Me Talk Pretty One Day', 'David Sedaris');
-let book3 = createBook("Aunts aren't Gentlemen", 'PG Wodehouse');
-
-console.log(book1.getDescription());  // "Mythos was written by Stephen Fry."
-book2.getDescription();  // "Me Talk Pretty One Day was written by David Sedaris."
-book3.getDescription();  // "Aunts aren't Gentlemen was written by PG Wodehouse"
+console.log(obj2['1']);
