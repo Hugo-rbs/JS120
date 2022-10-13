@@ -28,5 +28,4 @@ class Square extends Rectangle {
 }
 
 let square = new Square(5);
-console.log(square);
 console.log(`area of square = ${square.getArea()}`); // area of square = 25

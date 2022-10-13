@@ -27,6 +27,19 @@ The first method call with the number 20 as an argument returns the correct valu
 on the $50 original price, that value is updated under the price property though so whne the second
 method call runs, the value of it's argument to which price is pointing to is now 40
 // solution
+*/
+let item = {
+  name: 'Foo',
+  description: 'Fusce consequat dui est, semper.',
+  price: 50,
+  quantity: 100,
+  discount: function(percent) {
+    let discount = this.price * percent / 100;
+    return this.price - discount;
+  },
+};
+
+// or 
 
 // let item = {
 //   name: 'Foo',
@@ -35,7 +48,9 @@ method call runs, the value of it's argument to which price is pointing to is no
 //   quantity: 100,
 //   discount: function(percent) {
 //     let discount = this.price * percent / 100;
-//     return this.price - discount;
+//     let discountedPrice = this.price - discount;
+
+//     return discountedPrice;
 //   },
 // };
 

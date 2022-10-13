@@ -1,37 +1,17 @@
 /*
-TicTacToe
-game description:
+- After each game ends, the program should ask the human player whether they want to play again. 
+If they do, then the program should start a new game of TTT. Otherwise, it should end the program.
 
-- 2 players board game
-- board generated is a 3*3 grid
-- Players take turn marking a square with a marker that identifies the player
-- Traditionally the player to go first uses the marker 'X' to mark his/her squares, and the plater to go second uses the marker 'O'
-- The first player to mark 3 squares in a row with his/her marker wins the game
-- A row can be horizontal, vertical or or either one of the two diagonals
-- There is one human player and one computer player
-- The human player always move (place a marker) first in this version
+- The program should accept y or n (in lowercase or uppercase) as valid answers at the "play again?" prompt; all other answers are invalid.
 
-Indentify verbs and nouns:
+- The program should display the welcome message before the first game starts. It should never display the message again.
 
-Nouns: Board, Grid, Square, Marker, Row, Player, human, computer
-Verbs: Play, mark, move, place
-
-Organize:
-Game(n)
-Board(n)
-Row(n)
-Square(n)
-Marker(n)
-Player(n)
- - Mark(v)
- - Play(v)
- - Human(n)
- - Computer(n)
+- The program should display the results after each game ends, but before asking whether the human player wants to play again.
+- The program should display the goodbye message when the human player decides that he doesn't want to play again. 
+It should never display the goodbye message before that.
 
 
 */
-
-// Scaffolding
 
 let readline = require("readline-sync");
 

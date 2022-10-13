@@ -1,6 +1,26 @@
-// last version 
+// in progress
+
+/*
+As long as the user doesn't quit, keep track of a history of moves by both the human and computer. 
+Which data structure will you use? Will you use a new object or an existing object? How will you display it?
+
+
+--- 
+movesHistory {
+  game1: 
+}
+
+
+*/
 const readline = require('readline-sync');
-const possibleChoices = ['rock', 'paper', 'scissors'];
+const possibleChoices = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
+const WINNING_COMBINATIONS = {
+  scissors: ['paper', 'lizard'],
+  paper: ['rock', 'spoke'],
+  rock: ['lizard', 'scissors'],
+  lizard: ['spock', 'paper'],
+  spock: ['rock', 'scissors']
+};
 
 
 function createPlayer() {
@@ -38,7 +58,6 @@ function createHuman() {
 }
 
 
-
 const RPSGame  = {
   human: createHuman(),
   computer: createComputer(),
@@ -56,13 +75,9 @@ const RPSGame  = {
   determineRoundWinner() {
     let humanMove = this.human.move;
     let computerMove = this.computer.move;
-    if ((humanMove === 'rock' && computerMove === 'scissors') ||
-        (humanMove === 'paper' && computerMove === 'rock') ||
-        (humanMove === 'scissors' && computerMove === 'paper')) {
+    if (WINNING_COMBINATIONS[humanMove].some(value => value === computerMove)) {
       this.roundWinner = 'human';
-    } else if ((computerMove === 'rock' && humanMove === 'scissors') ||
-               (computerMove === 'paper' && humanMove === 'rock') ||
-               (computerMove === 'scissors' && humanMove === 'paper')) {
+    } else if (WINNING_COMBINATIONS[computerMove].some(value => value === humanMove)) {
       this.roundWinner = 'computer';
     } else {
       this.roundWinner = 'tie';

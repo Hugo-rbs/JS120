@@ -1,6 +1,13 @@
-// last version 
+// last version
 const readline = require('readline-sync');
-const possibleChoices = ['rock', 'paper', 'scissors'];
+const possibleChoices = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
+const WINNING_COMBINATIONS = {
+  scissors: ['paper', 'lizard'],
+  paper: ['rock', 'spoke'],
+  rock: ['lizard', 'scissors'],
+  lizard: ['spock', 'paper'],
+  spock: ['rock', 'scissors']
+};
 
 
 function createPlayer() {
@@ -38,7 +45,6 @@ function createHuman() {
 }
 
 
-
 const RPSGame  = {
   human: createHuman(),
   computer: createComputer(),
@@ -56,13 +62,9 @@ const RPSGame  = {
   determineRoundWinner() {
     let humanMove = this.human.move;
     let computerMove = this.computer.move;
-    if ((humanMove === 'rock' && computerMove === 'scissors') ||
-        (humanMove === 'paper' && computerMove === 'rock') ||
-        (humanMove === 'scissors' && computerMove === 'paper')) {
+    if (WINNING_COMBINATIONS[humanMove].some(value => value === computerMove)) {
       this.roundWinner = 'human';
-    } else if ((computerMove === 'rock' && humanMove === 'scissors') ||
-               (computerMove === 'paper' && humanMove === 'rock') ||
-               (computerMove === 'scissors' && humanMove === 'paper')) {
+    } else if (WINNING_COMBINATIONS[computerMove].some(value => value === humanMove)) {
       this.roundWinner = 'computer';
     } else {
       this.roundWinner = 'tie';

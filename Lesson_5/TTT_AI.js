@@ -1,37 +1,26 @@
 /*
-TicTacToe
-game description:
+Let's give the computer some smarts -- a touch of Artificial Intelligence if you will.
+We'll make the computer defensive-minded.
 
-- 2 players board game
-- board generated is a 3*3 grid
-- Players take turn marking a square with a marker that identifies the player
-- Traditionally the player to go first uses the marker 'X' to mark his/her squares, and the plater to go second uses the marker 'O'
-- The first player to mark 3 squares in a row with his/her marker wins the game
-- A row can be horizontal, vertical or or either one of the two diagonals
-- There is one human player and one computer player
-- The human player always move (place a marker) first in this version
+If there's an immediate threat on the board, the computer should defend against that threat. 
+An immediate threat is present when the human has 2 squares in a row with an unused square in the 3rd 
+position of that row. The computer needs to defend that square; 
+it must block that move by claiming the unused square. 
+That is, the computer should place its marker on the unused square.
 
-Indentify verbs and nouns:
+set movesToCounter:
+[[1, 2], [2, 3], [1, 3], // first line horizontal
+ [4, 5], [5, 6], [4, 6], // second line horizontal
+ [7, 8], [8, 9], [7, 9], // third line horizontal
+ [1, 4], [4, 7], [1, 7], // first line vertical
+ [2, 5], [5, 8], [2, 8], // second line vertical
+ [3, 6], [6, 9], [3, 9], // third line vertical
+ [1, 5], [5, 9], [1, 9], // first diagonal
+ [3, 5], [5, 7], [3, 7]] // second diagonal
 
-Nouns: Board, Grid, Square, Marker, Row, Player, human, computer
-Verbs: Play, mark, move, place
-
-Organize:
-Game(n)
-Board(n)
-Row(n)
-Square(n)
-Marker(n)
-Player(n)
- - Mark(v)
- - Play(v)
- - Human(n)
- - Computer(n)
-
+The computer can continue to select random squares when there is no immediate threat.
 
 */
-
-// Scaffolding
 
 let readline = require("readline-sync");
 

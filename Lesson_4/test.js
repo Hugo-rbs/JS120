@@ -1,23 +1,18 @@
-let fooA = { bar: 1};
-let fooB =  Object.create(fooA);
-let fooC = Object.create(fooB);
+// function Factory () {};
 
+// console.log(Object.constructor);
 
-function assignProperty(obj, prop, newVal) {
-  while (obj !== null) {
-    if (obj.hasOwnProperty(prop)) {
-      obj[prop] = newVal;
-    }
-    obj = Object.getPrototypeOf(obj);
-  }
-}
+// let test = new Factory();
+// console.log(test.constructor);
+// console.log(Object.getPrototypeOf(test) === Factory.prototype);
+// console.log(Factory.constructor);
 
-assignProperty(fooC, 'bar', 2);
-console.log(fooC.bar); // 2 
-console.log(fooA.bar); // 2
+// let gogo = {};
+// console.log(gogo.constructor);
+// console.log(Object.getPrototypeOf(Factory.prototype));
 
-assignProperty(fooC, 'qux', 3);
-console.log(fooA.qux); // undefined
-console.log(fooB.qux); // undefined
+let arr = [];
+let test = new String('a');
+console.log(Array.prototype.constructor);
+console.log(String.prototype.constructor)
 
-console.log(fooA.hasOwnProperty('qux')); // false
