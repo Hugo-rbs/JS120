@@ -1,9 +1,9 @@
-function Person(firstName, lastName) {
-  this.firstName = firstName;
-  this.lastName = lastName;
+let ninjaA;
+{
+  const Ninja = function() {
+    this.swung = false;
+  };
+  ninjaA = new Ninja();
 }
-
-Person.prototype.getFullName = function () {
-  return `${this.firstName} ${this.lastName}`;
-}
-
+let ninjaB = new ninjaA.constructor();
+console.log(ninjaA.constructor === ninjaB.constructor); // => true

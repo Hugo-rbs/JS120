@@ -1,15 +1,18 @@
-// in progress
+// in progress - see test file 
 
 /*
-As long as the user doesn't quit, keep track of a history of moves by both the human and computer. 
-Which data structure will you use? Will you use a new object or an existing object? How will you display it?
 
+what I need:
+1.get both users choice after each turn and save them 
+- When the game is won if the player wants to keep playing we need to {
+  round1: [paper, scissors],
+  round2: [rock, paper],
+  round3: [b, r],
+  }
+2.offer the player to see an history of the move 
+3.print the history of move to the screen
 
---- 
-movesHistory {
-  game1: 
-}
-
+create a moveHistory 
 
 */
 const readline = require('readline-sync');
@@ -27,6 +30,7 @@ function createPlayer() {
   return {
     move: null,
     score: 0,
+    moveHistory: [],
   };
 }
 

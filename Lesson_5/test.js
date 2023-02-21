@@ -12,7 +12,9 @@ class Square {
   toString() {
     return this.marker;
   }
-
+  getMarker () {
+    return this.marker;
+  }
   setMarker(marker) {
     this.marker = marker;
   }
@@ -22,7 +24,7 @@ class Square {
   }
 }
 
-class Board {
+class Board { 
   static POSSIBLE_WINNING_ROWS = [
     [ "1", "2", "3" ],            // top row of board
     [ "4", "5", "6" ],            // center row of board
@@ -33,7 +35,6 @@ class Board {
     [ "1", "5", "9" ],            // diagonal: top-left to bottom-right
     [ "3", "5", "7" ],            // diagonal: bottom-left to top-right
   ];
-}
 
   constructor() {
     this.squares = {};
